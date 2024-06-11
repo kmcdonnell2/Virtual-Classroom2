@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>Ms. McD's Virtual Classroom</title>
+</head>
+<body>
+<script src="/static/js/navbar.js"></script>
+<script>createNavbar(false);</script>
+
+<section class="main-content">
+    <h1>Login</h1>
+    {% if session['message'] %}
+        <p>{{ session['message'] }}</p>
+    {% endif %}
+    <div id="login-widget">
+            <p>Enter your information to login.</p>
+            <form id="student-login-form" class="login-form">
+                <p><label for="username">Username:</label>
+                <input type="text" id="username" name="username" required></p>
+                <p><button type="submit">Login</button></p>
+            </form>
+    </div>
+    <script src="/static/js/studentlogin.js"></script>
+</section>
+
+</body>
+</html>

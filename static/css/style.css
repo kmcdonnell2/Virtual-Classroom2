@@ -1,0 +1,207 @@
+body {
+    background-color: white;
+    font-family: Arial;
+
+}
+
+h1 {
+    color: #FF007f;
+}
+
+.main-content {
+    padding: 10px 10px 10px 10px;
+}
+
+.main-content{
+    color: black;
+}
+
+nav a {
+    color: white;
+    font-size:1.2em;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    color: #FF007f;
+}
+
+nav {
+    background-color: black;
+    margin: 10px;
+    color: white;
+}
+
+nav table {
+    width: 100%;
+    border-collapse: collapse;
+
+    text-align: center;
+    padding: 10px;
+}
+
+nav td {
+    text-align: center; /* Optional: Center text horizontally within the cell */
+    justify-content: center;
+}
+
+footer {
+    background-color: black;
+    margin: 10px 10px;
+    padding: 10px;
+    height: 20px;
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+}
+
+footer p {
+    margin: 0px 50px;
+    text-align: center;
+    color: white;
+}
+
+.right-nav {
+    position: absolute;
+    width: 10px;
+    background-color: grey;
+    right: 0;
+    top: 25%;
+    height: 50%;
+    transition: width 0.1s ease-in-out;
+}
+
+.right-nav:hover {
+    width: 200px;
+}
+
+.right-nav h2 {
+    color: white;
+    padding: 0px 10px;
+    text-align: center;
+}
+
+.menu-button {
+    width: 180px;
+    height: 50px;
+    margin: 10px 10px;
+    background-color: #FF007f;
+    color: white;
+    vertical-align: middle;
+    horiz-align: center;
+}
+
+.menu-button p{
+    padding: 10px 10px;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.menu-button a{
+    padding: 10px 10px;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.right-nav:hover .menu-button{
+    display: block;
+}
+
+.menu-button:hover{
+    background-color: #eF005f;
+}
+
+#profilepic {
+    float: left;
+    width: 200px;
+    height: 200px;
+    margin: 0px 10px 10px 0px;
+}
+
+
+#contact-widget {
+    display: none;
+    max-width: 400px;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    float:right;
+}
+
+#login-widget {
+    max-width: 400px;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    float:left;
+}
+
+.main-content ul {
+    line-height: 1.5;
+}
+
+#hall-pass-status {
+    display:none;
+}
+
+.main-table table {
+    width: 100%;
+}
+.main-table td {
+    width: 50%;
+    vertical-align: top;
+}
+
+#hall-pass-log {
+    display: none;
+    width: 200px;
+    height: 300px;
+    scroll-behavior: smooth;
+}
+
+#chat-box {
+    display: block;
+    width: 100%;
+    height: 300px;
+    scroll-behavior: smooth;
+}
+
+.status-table table {
+    width:100%;
+}
+
+.status-table td{
+    width: 33%;
+    vertical-align: top;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 100px;
+}
+
+.good {
+    background-color: lightgreen;
+}
+
+.slow {
+    background-color: lightyellow;
+}
+
+.stuck {
+    background-color: lightcoral;
+}
+
+#student-radio-buttons {
+    width: 20%;
+}
+
+#student-chat-area {
+    width: 80%;
+}
+
+#chat-message-input {
+    width: 90%;
+}

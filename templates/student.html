@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css" />
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.2/socket.io.js"></script>
+
+    <script src="/static/js/student.js"></script>
+    <script src="/static/js/helper.js"></script>
+    <script src="/static/js/chat.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>Ms. McD's Virtual Classroom</title>
+</head>
+<body>
+<script src="/static/js/navbar.js"></script>
+<script src="/static/js/navbar.js"></script>
+<script>createNavbar(true);</script>
+
+
+<section class="main-content">
+    <h1>Welcome to Ms. McD's Virtual Classroom</h1>
+    <p>You are logged in as {{ session['username'] }}</p>
+
+    {% if session['message'] %}
+        <p>{{ session['message'] }}</p>
+    {% endif %}
+
+    <input type="text" id="username" hidden=true value="{{ session['username'] }}">
+
+<div class="main-table">
+<table>
+    <tr>
+        <td>
+            <h3>How are you currently doing?</h3>
+            <div>
+                <Label><input type="radio" name="feedback" value="good" onchange="handleFeedbackChange(this)" checked>Good</Label>
+                <Label><input type="radio" name="feedback" value="slow" onchange="handleFeedbackChange(this)">Slow</Label>
+                <Label><input type="radio" name="feedback" value="stuck" onchange="handleFeedbackChange(this)">Stuck</Label>
+            </div>
+
+
+            <h3>Questions</h3>
+            <ul id="question-list"></ul>
+            <input type="text" id="question-input" placeholder="Type your message">
+            <button onclick="sendQuestion()">Send</button>
+
+            <h3>Hall Pass</h3>
+            <ul id="hall-pass-list"></ul>
+            <div id="hall-pass-request">
+                <Label><input type="radio" name="hallpass" value="restroom">Restroom</Label><br>
+                <Label><input type="radio" name="hallpass" value="water">Water</Label><br>
+                <Label><input type="radio" name="hallpass" value="other">Other</Label><br>
+                <button onclick="hallPassRequest()">Send Request</button>
+            </div>
+            <div id="hall-pass-status">
+                <button id="hall-pass-cancel-button" onclick="hallPassCancel()" hidden="true">Cancel Request</button>
+                <button id="hall-pass-end-button" onclick="hallPassEnd()" hidden="true">End Request (I'm back!)</button>
+            </div>
+
+            <h3>Announcements</h3>
+            <ul id="announcement-list"></ul>
+        </td>
+        <td>
+            <h3>Send Teacher a Message</h3>
+            <textarea id="chat-box" readonly></textarea> <br>
+            <input type="text" id="chat-message-input" placeholder="Type your message">
+            <button onclick="sendMessageToTeacher()">Send</button>
+        </td>
+    </tr>
+</table>
+</div>
+
+</section>
+
+
+</body>
+</html>

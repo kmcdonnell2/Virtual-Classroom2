@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css" />
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.2/socket.io.js"></script>
+
+    <script src="/static/js/teacher.js"></script>
+    <script src="/static/js/helper.js"></script>
+    <script src="/static/js/chat.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>Ms. McD's Virtual Classroom</title>
+</head>
+<body>
+<script src="/static/js/navbar.js"></script>
+<script src="/static/js/navbar.js"></script>
+<script>createNavbar(true);</script>
+
+<section class="main-content">
+    <h1>Welcome to Ms. McD's Virtual Classroom</h1>
+    <p>You are logged in as Teacher {{ session['username'] }}</p>
+
+    <input type="text" id="student-list-input" value="{{ session['message'] }}" hidden="true">
+
+    <div class="status-table">
+    <table>
+        <tr>
+            <td class="good">
+                <h4>Good</h4>
+                <ul id="good-list"></ul>
+            </td>
+            <td class="slow">
+                <h4>Slow</h4>
+                <ul id="slow-list"></ul>
+            </td>
+            <td class="stuck">
+                <h4>Stuck</h4>
+                <ul id="stuck-list"></ul>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h3>Questions</h3>
+                <ul id="question-list"></ul>
+            </td>
+            <td>
+                <h3>Announcements</h3>
+                <ul id="announcement-list"></ul>
+                <input type="text" id="announcement-input" placeholder="Type your message">
+                <button onclick="sendAnnouncement()">Send</button>
+            </td>
+            <td>
+                <h3>Hall Pass Requests</h3>
+                <ul id="hall-pass-list"></ul>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <h3>Send a Student a Message</h3>
+                <table id="chat-table">
+                    <tr>
+                        <td id="student-radio-buttons">
+                            <div id="studentRadioContainer"></div>
+                        </td>
+                        <td id="student-chat-area">
+                            <textarea id="chat-box" readonly></textarea> <br>
+
+                            <input type="text" id="chat-message-input" placeholder="Type your message">
+                            <button onclick="sendMessageToStudent()">Send</button>
+
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <div class="hall-pass-log-section">
+                    <h4>Hall Pass Log</h4>
+                    <button id="showHallPassLogButton" onclick="showHallPassLog()">Show Hall Pass Log</button>
+                    <br>
+                    <textarea id="hall-pass-log" readonly></textarea>
+                </div>
+            </td>
+
+        </tr>
+    </table>
+    </div>
+</section>
+
+
+
+
+
+</body>
+</html>
