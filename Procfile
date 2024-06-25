@@ -1,1 +1,1 @@
-web: gunicorn virtual-classroom/app
+web: gunicorn app:app
