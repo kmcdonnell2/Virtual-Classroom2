@@ -1,4 +1,5 @@
-var socket = io.connect('https://' + document.domain + ':' + location.port);
+//var socket = io.connect('https://' + document.domain + ':' + location.port);
+var socket = io.connect('wss://virtual-classroom-5f0a6adbc3d6.herokuapp.com/');
 
 socket.on('message', function(msg) {
     if(msg.includes("announcement")) {
